@@ -1,0 +1,10 @@
+#include <sunlinsol/sunlinsol_band.h>
+#include <sunlinsol/sunlinsol_dense.h>
+//#include <sunlinsol/sunlinsol_klu.h>
+#include <sunlinsol/sunlinsol_lapackband.h>
+#include <sunlinsol/sunlinsol_lapackdense.h>
+#include <sunlinsol/sunlinsol_pcg.h>
+#include <sunlinsol/sunlinsol_spbcgs.h>
+#include <sunlinsol/sunlinsol_spfgmr.h>
+#include <sunlinsol/sunlinsol_spgmr.h>
+#include <sunlinsol/sunlinsol_sptfqmr.h>

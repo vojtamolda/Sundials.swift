@@ -1,0 +1,53 @@
+module CSundials {
+    header "sundials.h"
+    link "sundials_generic"
+
+    module ARKODE {
+        header "arkode.h"
+        link "sundials_arkode"
+    }
+
+    module CVODES {
+        header "cvodes.h"
+        link "sundials_cvodes"
+    }
+
+    module IDAS {
+        header "idas.h"
+        link "sundials_idas"
+    }
+
+    module KINSOL {
+        header "kinsol.h"
+        link "sundials_kinsol"
+    }
+
+    module NVector {
+        header "nvector.h"
+        link "sundials_nvecmanyvector"
+//        link "sundials_nvecmpimanyvector" // Xcode can't find <mpi.h>
+//        link "sundials_nvecparallel" // Xcode can't find <mpi.h>
+        link "sundials_nvecserial"
+    }
+    
+    module SUNMatrix {
+        header "sunmatrix.h"
+        link "sundials_sunmatrixband"
+        link "sundials_sunmatrixdense"
+        link "sundials_sunmatrixsparse"
+    }
+    
+    module SUNLinSol {
+        header "sunlinsol.h"
+        link "sundials_sunlinsolband"
+        link "sundials_sunlinsoldense"
+//        link "sundials_sunlinsolklu" // Xcode can't find <klu.h>
+        link "sundials_sunlinsollapackband"
+        link "sundials_sunlinsollapackdense"
+        link "sundials_sunlinsolpcg"
+        link "sundials_sunlinsolspbcgs"
+        link "sundials_sunlinsolspfgmr"
+        link "sundials_sunlinsolspgmr"
+        link "sundials_sunlinsolsptfqmr"
+    }
+}
