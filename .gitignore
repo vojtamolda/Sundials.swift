@@ -1,0 +1,13 @@
+# Swift Package Manager
+/.build/
+/.swiftpm/
+/Packages/
+
+# XCode Projects and Data
+*xcuserdata*
+
+# Folder Preferences on macOS
+.DS_Store
+
+# Swift Package Manager
+Package.resolved
