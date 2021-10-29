@@ -1,5 +1,5 @@
 import CSundials
-import CKINSOL
+import CSundials_KINSOL_Private
 
 
 /// General-purpose nonlinear algebraic equation solver based on Newton-Krylov technology.

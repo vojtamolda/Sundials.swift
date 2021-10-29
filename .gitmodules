@@ -1,0 +1,4 @@
+[submodule "Sources/CSundials/private"]
+	path = Sources/CSundials/private
+	url = https://github.com/LLNL/sundials.git
+	branch = master

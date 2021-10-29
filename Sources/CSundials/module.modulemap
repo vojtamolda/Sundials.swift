@@ -2,26 +2,6 @@ module CSundials {
     header "sundials.h"
     link "sundials_generic"
 
-    module ARKODE {
-        header "arkode.h"
-        link "sundials_arkode"
-    }
-
-    module CVODES {
-        header "cvodes.h"
-        link "sundials_cvodes"
-    }
-
-    module IDAS {
-        header "idas.h"
-        link "sundials_idas"
-    }
-
-    module KINSOL {
-        header "kinsol.h"
-        link "sundials_kinsol"
-    }
-
     module NVector {
         header "nvector.h"
         link "sundials_nvecmanyvector"
@@ -50,4 +30,41 @@ module CSundials {
         link "sundials_sunlinsolspgmr"
         link "sundials_sunlinsolsptfqmr"
     }
+
+    module ARKODE {
+        header "arkode.h"
+        link "sundials_arkode"
+    }
+    
+    module CVODES {
+        header "cvodes.h"
+        link "sundials_cvodes"
+    }
+
+    module IDAS {
+        header "idas.h"
+        link "sundials_idas"
+    }
+    
+    module KINSOL {
+        header "kinsol.h"
+        link "sundials_kinsol"
+    }
+}
+
+
+module CSundials_ARKODE_Private {
+    header "private/src/arkode/arkode_impl.h"
+}
+
+module CSundials_CVODES_Private {
+    header "private/src/cvodes/cvodes_impl.h"
+}
+
+module CSundials_IDAS_Private {
+    header "private/src/idas/idas_impl.h"
+}
+
+module CSundials_KINSOL_Private {
+    header "private/src/kinsol/kinsol_impl.h"
 }
