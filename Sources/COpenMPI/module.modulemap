@@ -1,0 +1,3 @@
+module COpenMPI {
+    header "mpi.h"
+}

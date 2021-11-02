@@ -1,10 +1,12 @@
 import XCTest
+import COpenMPI
 import CSundials
 
 
 final class NVectorTests: XCTestCase {
     static var allTests = [
         ("test_serial", test_serial),
+        ("test_parallel", test_parallel),
     ]
     
     let N: sunindextype = 3
@@ -20,10 +22,28 @@ final class NVectorTests: XCTestCase {
         defer { N_VDestroy(two) }
         N_VConst(-2, two)
 
-        XCTAssertEqual(abstDotProduct(one, two), realtype(2 * N))
+        XCTAssertEqual(absDotProduct(one, two), realtype(2 * N))
     }
     
-    func abstDotProduct(_ x: N_Vector?, _ y: N_Vector?) -> realtype {
+    func test_parallel() {
+        MPI_Init(nil, nil)
+        var size: Int32 = 0
+        MPI_Comm_size(MPI_COMM_WORLD, &size)
+
+        let one = N_VNew_Parallel(MPI_COMM_WORLD, N, N)
+        XCTAssertNotNil(one)
+        defer { N_VDestroy(one) }
+        N_VConst(-1, one)
+
+        let two = N_VNew_Parallel(MPI_COMM_WORLD, N, N)
+        XCTAssertNotNil(two)
+        defer { N_VDestroy(two) }
+        N_VConst(-2, two)
+        
+        XCTAssertEqual(absDotProduct(one, two), realtype(2 * N))
+    }
+    
+    func absDotProduct(_ x: N_Vector?, _ y: N_Vector?) -> realtype {
         XCTAssertNotNil(x)
         XCTAssertNotNil(y)
 

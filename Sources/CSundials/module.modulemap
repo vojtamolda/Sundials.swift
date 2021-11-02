@@ -5,8 +5,8 @@ module CSundials {
     module NVector {
         header "nvector.h"
         link "sundials_nvecmanyvector"
-//        link "sundials_nvecmpimanyvector" // Xcode can't find <mpi.h>
-//        link "sundials_nvecparallel" // Xcode can't find <mpi.h>
+        link "sundials_nvecmpimanyvector"
+        link "sundials_nvecparallel"
         link "sundials_nvecserial"
     }
     

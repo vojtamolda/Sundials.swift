@@ -13,12 +13,16 @@ let package = Package(
         .library(
             name: "CSundials",
             targets: ["CSundials"]
-        )
+        ),
+        .library(
+            name: "COpenMPI",
+            targets: ["COpenMPI"]
+        )        
     ],
     targets: [
         .target(
             name: "Sundials",
-            dependencies: ["CSundials"]
+            dependencies: ["CSundials", "COpenMPI"]
         ),
         .testTarget(
             name: "SundialsTests",
@@ -26,7 +30,7 @@ let package = Package(
         ),
         .testTarget(
             name: "CSundialsTests",
-            dependencies: ["CSundials"]
+            dependencies: ["CSundials", "COpenMPI"]
         ),
         .systemLibrary(
             name: "CSundials",
@@ -34,6 +38,14 @@ let package = Package(
             providers: [
                 .brew(["sundials"]),
                 .apt(["libsundials-dev"])
+            ]
+        ),
+        .systemLibrary(
+            name: "COpenMPI",
+            pkgConfig: "ompi",
+            providers: [
+                .brew(["open-mpi"]),
+                .apt(["libopenmpi-dev"])
             ]
         )
     ]
