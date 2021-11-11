@@ -1,0 +1,6 @@
+module CSuiteSparse {
+  module KLU {
+    header "klu.h"
+    link "klu"
+  }
+}

@@ -1,6 +1,6 @@
 #include <sunlinsol/sunlinsol_band.h>
 #include <sunlinsol/sunlinsol_dense.h>
-//#include <sunlinsol/sunlinsol_klu.h>
+#include <sunlinsol/sunlinsol_klu.h>
 #include <sunlinsol/sunlinsol_lapackband.h>
 #include <sunlinsol/sunlinsol_lapackdense.h>
 #include <sunlinsol/sunlinsol_pcg.h>

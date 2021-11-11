@@ -21,7 +21,7 @@ module CSundials {
         header "sunlinsol.h"
         link "sundials_sunlinsolband"
         link "sundials_sunlinsoldense"
-//        link "sundials_sunlinsolklu" // Xcode can't find <klu.h>
+        link "sundials_sunlinsolklu"
         link "sundials_sunlinsollapackband"
         link "sundials_sunlinsollapackdense"
         link "sundials_sunlinsolpcg"

@@ -17,12 +17,16 @@ let package = Package(
         .library(
             name: "COpenMPI",
             targets: ["COpenMPI"]
-        )        
+        ),
+        .library(
+            name: "CSuiteSparse",
+            targets: ["CSuiteSparse"]
+        )
     ],
     targets: [
         .target(
             name: "Sundials",
-            dependencies: ["CSundials", "COpenMPI"]
+            dependencies: ["CSundials", "COpenMPI", "CSuiteSparse"]
         ),
         .testTarget(
             name: "SundialsTests",
@@ -30,7 +34,7 @@ let package = Package(
         ),
         .testTarget(
             name: "CSundialsTests",
-            dependencies: ["CSundials", "COpenMPI"]
+            dependencies: ["CSundials", "COpenMPI", "CSuiteSparse"]
         ),
         .systemLibrary(
             name: "CSundials",
@@ -47,6 +51,14 @@ let package = Package(
                 .brew(["open-mpi"]),
                 .apt(["libopenmpi-dev"])
             ]
-        )
+        ),
+        .systemLibrary(
+            name: "CSuiteSparse",
+            pkgConfig: "libsuitesparse",
+            providers: [
+                .brew(["suite-sparse"]),
+                .apt(["libsuitesparse-dev"])
+            ]
+        ),
     ]
 )

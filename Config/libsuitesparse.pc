@@ -1,0 +1,10 @@
+prefix=/usr/local/opt/suite-sparse
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libsuitesparse
+Description: Collection of libraries for computations involving sparse matrices.
+Version: 5.10.1
+Libs: -L${libdir}
+Cflags: -I${includedir}
