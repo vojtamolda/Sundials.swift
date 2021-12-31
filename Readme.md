@@ -7,8 +7,10 @@
 [![Build Badge]][Build]  [![Release Badge]][Release]  [![Contributions Badge]][Contributions]
 [![License Badge]][License]  [![Lifecycle Badge]][Lifecycle]  [![Swift Badge]][Swift]
 
-**SU**ite of **N**onlinear and **DI**fferential/**AL**gebraic equation **S**olvers wrapped for use in Swift. This library is designed and created with two high level goals in mind. First, to provide user friendly and performant wrappers around the [original library][Sundials] written in C. And second, leverage the [automatic differentiation][Differentiable Programming] built into the Swift compiler to automatically synthesize full Jacobians or Jacobian-vector products.
+> Currently it is impossible to complete the project to a bug that crashes the Swift compiler when inline closures are used. See https://bugs.swift.org/browse/SR-12992 for more details.
 
+
+**SU**ite of **N**onlinear and **DI**fferential/**AL**gebraic equation **S**olvers wrapped for use in Swift. This library is designed and created with two high level goals in mind. First, to provide user friendly and performant wrappers around the [original library][Sundials] written in C. And second, leverage the [automatic differentiation][Differentiable Programming] built into the Swift compiler to automatically synthesize full Jacobians or Jacobian-vector products.
 
 ## Solvers
 
